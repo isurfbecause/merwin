@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<body>
+    <h1>HI</h1>
+    <form action="/">
+        <button id="on">On</button>
+        <button id="off">Off</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script>
+        $('#on').on('click', function(e) {
+            e.preventDefault();
+            console.log('click');
+            $.get('/on', function(data) {
+                console.log(data);
+            });
+        });
+
+        $('#off').on('click', function(e) {
+            e.preventDefault();
+            console.log('click');
+            $.get('/off', function(data) {
+                console.log(data);
+            });
+        });
+    </script>
+</body>
+</html>
